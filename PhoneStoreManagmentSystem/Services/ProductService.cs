@@ -30,6 +30,7 @@ namespace PhoneStoreManagmentSystem.Services
         {
             var _product = _dbContext.Produktet.FirstOrDefault(c => c.Name == product.EmriProduktit);
             _product!.Kostoja = product.Kostoja;
+            _dbContext.Update(_product);
             _dbContext.SaveChanges();
             return "Produkti u perditesua me sukses!";
         }
